@@ -1,24 +1,15 @@
-from flask import Flask
-
-app = Flask(__name__)
 import requests
 
-# Function to make API request and return the data
-def get_airports():
+def get_airport_info():
     url = "https://airport-info.p.rapidapi.com/airport"
     headers = {
         "X-RapidAPI-Key": "f8901fd9e2mshea5eb425e4dc2e8p1ec6b4jsnafa09dc7acb9",
         "X-RapidAPI-Host": "airport-info.p.rapidapi.com"
     }
     response = requests.get(url, headers=headers)
-    airport_data = response.json()
-    return airport_data
+    return response.json()
 
-# Route to display airport data
-@app.route('/airports')
-def airports():
-    airport_data = get_airports()
-    return airport_data
-
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    airport_info = get_airport_info()
+    for airport in airport_info:
+        print(airport)
