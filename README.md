@@ -50,3 +50,4 @@ Technical background (or specification or knowledge) requirements [100-200 words
 
 • AWS Shield: Protect your web application from DDoS attacks with AWS Shield, especially if your application is public-facing and requires high availability.
 
+
