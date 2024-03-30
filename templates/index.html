@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Townsville Airport and Airline Information</title>
+</head>
+<body>
+    <h1>Airport Information</h1>
+    {% if airport_info %}
+        <ul>
+            {% for airport in airport_info %}
+                <li>{{ airport.name }} - {{ airport.city }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Error fetching airport information</p>
+    {% endif %}
+
+    <h1>Airline Information</h1>
+    {% if airline_info %}
+        <ul>
+            {% for airline in airline_info %}
+                <li>{{ airline.name }} - {{ airline.iata_code }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Error fetching airline information</p>
+    {% endif %}
+</body>
+</html>
