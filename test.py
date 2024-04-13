@@ -14,12 +14,11 @@ def get_airport_info(name):
 
 def get_airline_info(name):
     api_url = f'https://api.api-ninjas.com/v1/airlines?name={name}'
-    response = requests.get(api_url, headers={'X-Api-Key': API_KEY})
+    response = requests.get(api_url, headers={'X-Api-Key': API_KEY}) 
     return response.json() if response.status_code == requests.codes.ok else None
 
 @app.route('/')
-def index():  
-
+def index():     
 
     # Get airport information
     airport_info = get_airport_info(name)
